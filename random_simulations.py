@@ -6,7 +6,7 @@ import json
 
 
 root = miscellaneous.init_directory("./results", rmfiles=False)
-root_meta = miscellaneous.init_directory(os.path.join(root, "meta"))
+root_meta = root
 root_images = miscellaneous.init_directory(os.path.join(root, "images"))
 
 ###

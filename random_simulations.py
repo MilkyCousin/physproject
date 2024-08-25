@@ -89,4 +89,4 @@ for b in range(B):
 
 
 with open(os.path.join(root_meta, "meta.json"), "w") as out:
-    json.dump(meta_data, out)
+    json.dump(meta_data, out, indent=4)

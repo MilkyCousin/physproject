@@ -43,6 +43,10 @@ def do_deletion(data: dict) -> None:
     objectsbox.delete(0, tk.END)
     paramsbox.delete("1.0", tk.END)
     image.delete(tk.ALL)
+
+    top.imgi = None
+    top.img = None
+
     print("done")
 
 
@@ -83,6 +87,8 @@ def do_visualisation(event, data: dict) -> None:
 
 
 def zoom(delta):
+    if top.img is None or top.imgi is None:
+        return
     imgi = top.imgi
     w, h = imgi.size
     wn, hn = int(w * delta), int(h * delta)
@@ -194,6 +200,9 @@ if __name__ == "__main__":
     # Зображення, що відповідає об'єкту
     image = tk.Canvas(frame_image, width=750, height=750, bg="gray")
     image.grid(row=0, column=0, columnspan=2, sticky="nsew")
+
+    top.imgi = None
+    top.img = None
 
     # Кнопки навігації по відображенню
     zoomin = tk.Button(frame_image, text="Збільшити", command=zoom_in)

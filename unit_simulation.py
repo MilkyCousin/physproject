@@ -1,6 +1,6 @@
 import json
 import os
-from utils import formulas, visualisation
+from utils import formulas, visualisation, transformations
 import numpy as np
 
 path_to_json = os.path.join("input_json", "input.json")
@@ -40,6 +40,6 @@ contextb = {
 }
 
 Z = f(K, W)
-Z_noisy = visualisation.apply_noise(Z, 0, 10e-2)
+Z_noisy = transformations.apply_noise(Z, 0, 10e-2)
 
 visualisation.generate_heatmap(input_given["image"], K, W, Z_noisy, contextb)
